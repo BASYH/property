@@ -40,7 +40,32 @@ echo "</tr>";}print "</table>";
 $num_rows = mysqli_num_rows($result);
 // число записей в таблице БД
 print("<P>Количество недвижимостей: $num_rows </p>");
+?>
+<h4>Жильцы</h4>		 
+<table border="1"> <tr> 
+<th> ФИО </th>   
+<th> Год рождения  </th>
+<th> Адрес </th> 
+<th> </th>
+<th> </th>
+ </tr>
+<?php $result=mysqli_query($connect,"SELECT id, fio, date_r, id_house, adress_t  FROM tenants");
+while($row=mysqli_fetch_array($result))
+{
+echo "<tr>";
+echo "<td>" . $row['fio'] . "</td>";
+echo "<td>" . $row['date_r'] . "</td>";
+echo "<td>" . $row['adress_t'] . "</td>";
+echo "<td><a href='lab4-3.php?id=" .$row['id']."'>Редактировать</a></td>";
+//запуск скрипта для редактирования
+echo "<td><a href='lab4-5.php?id=" .$row['id']."'>Удалить</a></td>";
+//запуск скрипта для удаления записи
+echo "</tr>";}print "</table>"; 
+$num_rows = mysqli_num_rows($result);
+// число записей в таблице БД
+print("<P>Количество жильцов: $num_rows </p>");
 ?>		
+<p> <a href="lab4-1.php">Добавить жильца</a>		
 <p> <a href="lab4-1.php">Добавить недвижимость</a>		 
 	<p><a href="index.php" class="link">назад </a></p>	
 </div>
