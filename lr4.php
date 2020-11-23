@@ -77,7 +77,7 @@ while($row=mysqli_fetch_array($result))
 echo "<tr>";
 echo "<td>" . $row['fio_man'] . "</td>";
 echo "<td>" . $row['debt'] . "</td>";
-echo "<td><a href='lab5-3.php?id=" .$row['id']."'>Редактировать</a></td>";
+echo "<td><a href='lab5-9.php?id=" .$row['id']."'>Редактировать</a></td>";
 //запуск скрипта для редактирования
 echo "<td><a href='lab5-6.php?id=" .$row['id']."'>Удалить</a></td>";
 //запуск скрипта для удаления записи
