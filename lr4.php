@@ -86,7 +86,9 @@ $num_rows1 = mysqli_num_rows($result);
 // число записей в таблице БД
 print("<P>Количество должников: $num_rows1 </p>");
 ?>		
-<p> <a href="lab5-7.php">Добавить должника</a>			 
+<p> <a href="lab5-7.php">Добавить должника</a>
+<p> <a href="gen_pdf.php">PDF</a>
+<p> <a href="gen_xls.php">Excel</a>			 
 	<p><a href="index.php" class="link">назад </a></p>	
 </div>
 	</body>
