@@ -65,7 +65,28 @@ $num_rows1 = mysqli_num_rows($result);
 // число записей в таблице БД
 print("<P>Количество жильцов: $num_rows1 </p>");
 ?>		
-<p> <a href="lab5-1.php">Добавить жильца</a>			 
+<p> <a href="lab5-1.php">Добавить жильца</a>
+<h4>Должники</h4>		 
+<table border="1"> <tr> 
+<th> ФИО </th>   
+<th> Долг  </th>
+ </tr>
+<?php $result=mysqli_query($connect,"SELECT id, fio_man, debt  FROM debtor");
+while($row=mysqli_fetch_array($result))
+{
+echo "<tr>";
+echo "<td>" . $row['fio_man'] . "</td>";
+echo "<td>" . $row['debt'] . "</td>";
+echo "<td><a href='lab5-3.php?id=" .$row['id']."'>Редактировать</a></td>";
+//запуск скрипта для редактирования
+echo "<td><a href='lab5-6.php?id=" .$row['id']."'>Удалить</a></td>";
+//запуск скрипта для удаления записи
+echo "</tr>";}print "</table>"; 
+$num_rows1 = mysqli_num_rows($result);
+// число записей в таблице БД
+print("<P>Количество должников: $num_rows1 </p>");
+?>		
+<p> <a href="lab5-7.php">Добавить должника</a>			 
 	<p><a href="index.php" class="link">назад </a></p>	
 </div>
 	</body>
